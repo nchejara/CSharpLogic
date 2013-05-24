@@ -48,6 +48,75 @@ namespace TestFunction
                 Current = newNode;
             }
         }
+        public void AddNodeFirst(Object data)
+        {
+            if (!IsNodeNameDuplicate(data))
+            {
+                size++;
+                Node tempNode = Head;
+                var newNode = new Node { Data = data };
+
+                if (tempNode == null)
+                {
+                    Head = newNode;
+                }
+                else
+                {
+                    Head = newNode;
+                    Head.Next = tempNode;
+                }
+            }
+        }
+        public void AddNodeLast(Object data)
+        {
+            if (!IsNodeNameDuplicate(data))
+            {
+                size++;
+                                
+                var newNode = new Node { Data = data };
+                Node tempNode = Head;
+                if (tempNode == null)
+                {
+                    Head = newNode;
+                }
+                while (tempNode != null)
+                {
+                    if (tempNode.Next == null)
+                    {
+                        tempNode.Next = newNode;
+                        break;
+                    }
+                    tempNode = tempNode.Next;
+                }
+
+                
+            }
+        }
+        public void AddNode(Object data,int position)
+        {
+            if (!IsNodeNameDuplicate(data))
+            {
+                size++;
+                int count = 0;
+                Node tempNode = Head;
+                Node lastNode = null;
+                var newNode = new Node { Data = data };
+                
+                while (tempNode != null)
+                {
+                    if (count == position - 1)
+                    {
+                        lastNode.Next = newNode;
+                        newNode.Next = tempNode;
+                        break;
+                    }
+                    count++;
+                    lastNode = tempNode;
+                    tempNode = tempNode.Next;
+                }
+            }
+        }
+
         /// <summary>
         /// Avoid adding duplicate node
         /// </summary>
@@ -124,6 +193,11 @@ namespace TestFunction
             return retNode;
         }
 
+        /// <summary>
+        /// Delete a specific node by passing node position
+        /// </summary>
+        /// <param name="position"></param>
+        /// <returns></returns>
         public bool DeleteNode(int position)
         {
       

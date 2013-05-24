@@ -42,6 +42,16 @@ namespace TestFunction
             Console.WriteLine("\n Node {0}", llm.DeleteNode("C") ? "is deleted" : "is not deleted!");
             llm.ShowListOfNode();
             Console.WriteLine("\nTotal Node are {0}", llm.size);
+            llm.AddNodeFirst("AA");
+            llm.AddNodeFirst("AA");
+            llm.AddNodeFirst("BB");
+            llm.AddNodeFirst("CC");
+            llm.ShowListOfNode();
+            Console.WriteLine("\nTotal Node are {0}", llm.size);
+            llm.AddNodeLast("AAA");
+            llm.AddNodeLast("BBB");
+            llm.AddNode("123", 2);
+            llm.ShowListOfNode();
             Console.ReadLine();
         }
     }
