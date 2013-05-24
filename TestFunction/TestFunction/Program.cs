@@ -24,22 +24,23 @@ namespace TestFunction
 
             // Linked List
 
-            LinkedListManipulation llm = new LinkedListManipulation();
-            Node nodeA = new Node();
-            nodeA.data = "A";
+            LinkedList llm = new LinkedList();
+            
+            llm.AddNode("A");
+            llm.AddNode("B"); 
+            llm.AddNode("C");
+            llm.AddNode("D");
 
-            Node nodeB = new Node();
-            nodeB.data = "B";
+            llm.ShowListOfNode();
+            Console.WriteLine("\nTotal Node are {0}", llm.size);
 
-            Node nodeC = new Node();
-            nodeC.data = "C";
+            Console.WriteLine("\n{0} Node is retrived!", llm.RetriveNode(1).Data);
+            Console.WriteLine("\n{0} Node is retrived!", llm.RetriveNode("B").Data);
 
-            llm.AddNode(nodeA);
-            llm.AddNode(nodeB); 
-            llm.AddNode(nodeC);
-
-            llm.printNodes();
-
+            Console.WriteLine("\n Node {0}", llm.DeleteNode(2) ? "is deleted!" : "is not deleted!");
+            Console.WriteLine("\n Node {0}", llm.DeleteNode("C") ? "is deleted" : "is not deleted!");
+            llm.ShowListOfNode();
+            Console.WriteLine("\nTotal Node are {0}", llm.size);
             Console.ReadLine();
         }
     }

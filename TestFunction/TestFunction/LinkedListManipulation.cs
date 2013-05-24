@@ -6,31 +6,143 @@ using System.Threading.Tasks;
 
 namespace TestFunction
 {
-    public class Node
+    
+    public class LinkedList
     {
-        public Object data { get; set; }
-        public Node Next { get; set; }
-    }
-
-    public class LinkedListManipulation
-    {
-        private Node Head;
-
-        public void AddNode(Node newNode)
+        public class Node
         {
-            newNode.Next = this.Head;
-            this.Head = newNode;
+            public Object Data { get; set; }
+            public Node Next { get; set; }
         }
 
-        public void printNodes()
+        public LinkedList()
         {
-            while (Head != null)
+            this.size = 0;
+            this.Head = null;
+            this.Current = null;
+        }
+        public int size { get; private set; }
+        public Node Head;
+        public Node Current;
+
+        public void AddNode(Object data)
+        {
+            size++;
+            var newNode = new Node { Data = data };
+
+            if(Head == null)
             {
-                Console.Write(Head.data + " ");
-                Head = Head.Next;
+                Head = newNode;
+            }
+            else
+            {
+                Current.Next = newNode;
+            }
+
+            Current = newNode;
+        }
+
+        public void ShowListOfNode()
+        {
+            Node tempNode = Head;
+
+            while (tempNode != null)
+            {
+                Console.Write(tempNode.Data + " ");
+                tempNode = tempNode.Next;
             }
         }
-    }
 
+        public Node RetriveNode(int position)
+        {
+            Node tempNode = Head;
+            Node retNode = null;
+            int count = 0;
+
+            while (tempNode != null)
+            {
+                if (count == position - 1)
+                {
+                    retNode = tempNode;
+                    break;
+                }
+                count++;
+                tempNode = tempNode.Next;
+            }
+
+            return retNode;
+        }
+
+        public Node RetriveNode(string nodeName)
+        {
+            Node tempNode = Head;
+            Node retNode = null;
+            
+            while (tempNode != null)
+            {
+                if (tempNode.Data.Equals(nodeName))
+                {
+                    retNode = tempNode;
+                    break;
+                }
+                tempNode = tempNode.Next;
+            }
+
+            return retNode;
+        }
+        public bool DeleteNode(int position)
+        {
+      
+            if (position == 1)
+            {
+                Head = null;
+                Current = null;
+                size = 0;
+                return true;
+            }
+
+            if (position > 1 && position <= size)
+            {
+                Node tempNode = Head;
+                Node lastNode = null;
+                int count = 0;
+                while (tempNode != null)
+                {
+                    if ( count == position - 1)
+                    {
+                        size--;
+                        lastNode.Next = tempNode.Next;
+                        return true;
+                    }
+                    count++;
+
+                    lastNode = tempNode;
+                    tempNode = tempNode.Next;
+                }
+
+            }
+            return false;
+        }
+
+        public bool DeleteNode(string nodeName)
+        {
+            Node tempNode = Head;
+            Node lastNode = null;
+            
+            while (tempNode != null)
+            {
+                if (tempNode.Data.Equals(nodeName))
+                {
+                    size--;
+                    lastNode.Next = tempNode.Next;
+                    return true;
+                }
+                lastNode = tempNode;
+                tempNode = tempNode.Next;
+            }
+
+            return false;
+        }
+    }
 
 }
