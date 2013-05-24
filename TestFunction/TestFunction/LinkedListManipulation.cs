@@ -25,6 +25,10 @@ namespace TestFunction
         public Node Head;
         public Node Current;
 
+        /// <summary>
+        /// Add new Node in the node List
+        /// </summary>
+        /// <param name="data"></param>
         public void AddNode(Object data)
         {
             if (!IsNodeNameDuplicate(data))
@@ -44,6 +48,11 @@ namespace TestFunction
                 Current = newNode;
             }
         }
+        /// <summary>
+        /// Avoid adding duplicate node
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns>Return true if newNode name already exists</returns>
         public bool IsNodeNameDuplicate(Object data)
         {
             Node tempNode = Head;
@@ -59,7 +68,9 @@ namespace TestFunction
 
             return false;
         }
-
+        /// <summary>
+        /// print all node which are linked to each othere
+        /// </summary>
         public void ShowListOfNode()
         {
             Node tempNode = Head;
@@ -71,6 +82,11 @@ namespace TestFunction
             }
         }
 
+        /// <summary>
+        /// Retrive specific node by passing its position
+        /// </summary>
+        /// <param name="position"></param>
+        /// <returns></returns>
         public Node RetriveNode(int position)
         {
             Node tempNode = Head;
