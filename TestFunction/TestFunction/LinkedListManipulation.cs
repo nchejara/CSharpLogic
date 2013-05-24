@@ -27,19 +27,37 @@ namespace TestFunction
 
         public void AddNode(Object data)
         {
-            size++;
-            var newNode = new Node { Data = data };
-
-            if(Head == null)
+            if (!IsNodeNameDuplicate(data))
             {
-                Head = newNode;
+                size++;
+                var newNode = new Node { Data = data };
+
+                if (Head == null)
+                {
+                    Head = newNode;
+                }
+                else
+                {
+                    Current.Next = newNode;
+                }
+
+                Current = newNode;
             }
-            else
+        }
+        public bool IsNodeNameDuplicate(Object data)
+        {
+            Node tempNode = Head;
+
+            while (tempNode != null)
             {
-                Current.Next = newNode;
+                if(tempNode.Data.Equals(data))
+                {
+                    return true;
+                }
+                tempNode = tempNode.Next;
             }
 
-            Current = newNode;
+            return false;
         }
 
         public void ShowListOfNode()
@@ -72,7 +90,6 @@ namespace TestFunction
 
             return retNode;
         }
-
         public Node RetriveNode(string nodeName)
         {
             Node tempNode = Head;
@@ -90,9 +107,11 @@ namespace TestFunction
 
             return retNode;
         }
+
         public bool DeleteNode(int position)
         {
       
+            //If position is equal to Head node then assign Head and current node null so all node will be deleted automatically
             if (position == 1)
             {
                 Head = null;
@@ -106,6 +125,7 @@ namespace TestFunction
                 Node tempNode = Head;
                 Node lastNode = null;
                 int count = 0;
+
                 while (tempNode != null)
                 {
                     if ( count == position - 1)
@@ -123,7 +143,6 @@ namespace TestFunction
             }
             return false;
         }
-
         public bool DeleteNode(string nodeName)
         {
             Node tempNode = Head;

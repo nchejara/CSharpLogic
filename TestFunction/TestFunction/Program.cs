@@ -30,6 +30,7 @@ namespace TestFunction
             llm.AddNode("B"); 
             llm.AddNode("C");
             llm.AddNode("D");
+            llm.AddNode("E");
 
             llm.ShowListOfNode();
             Console.WriteLine("\nTotal Node are {0}", llm.size);
