@@ -11,6 +11,10 @@ namespace LogicTest
     {
         static void Main(string[] args)
         {
+            string s = "test string";
+                s.Replace("test", "Best");
+            Console.WriteLine(s);
+            
             //Console.WriteLine(StringLogic.Reverse("Naren"));
             //Console.WriteLine(StringLogic.Trim("      N c\nM p\nKeshav     "));
             //Console.WriteLine(StringLogic.LeftTrim("      N c\nM p\nKeshav     "));
@@ -122,6 +126,20 @@ namespace LogicTest
 
             Console.WriteLine("\nMerge Two Array Sort :");
             array = ArrayLogic.MergeTwoArray(new int[] { 1, 2, 3, 5 }, new int[] { 6, 7, 8, 9, 10, 11, 12 });
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write("[ " + array[i] + " ] ");
+            }
+
+            Console.WriteLine("\nRemove duplicate item from an array :");
+            array = ArrayLogic.RemoveDuplicateElement(new int[] { 6, 7, 6, 7, 10, 10, 12 });
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write("[ " + array[i] + " ] ");
+            }
+
+            Console.WriteLine("\nRemove specifice index element  :");
+            array = ArrayLogic.RemoveAt(new int[] { 6, 7, 6, 7, 10, 10, 12 },3);
             for (int i = 0; i < array.Length; i++)
             {
                 Console.Write("[ " + array[i] + " ] ");
