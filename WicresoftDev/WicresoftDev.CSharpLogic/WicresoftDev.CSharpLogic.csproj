@@ -46,6 +46,7 @@
     <Compile Include="ArithmeticLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SinglyLinkedList.cs" />
+    <Compile Include="SortingLogic.cs" />
     <Compile Include="StringLogic.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

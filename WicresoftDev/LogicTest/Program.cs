@@ -92,7 +92,7 @@ namespace LogicTest
             //Console.WriteLine("\nOctal   [{0}] Decimal is : [{1}]", 24, DigitalLogic.OctalToDecimal("24"));
             //Console.WriteLine("\nOctal   [{0}] Binary is : [{1}]", 8, DigitalLogic.OctalToBinary("8"));
 
-            int[] array = ArrayLogic.BubbleSort(new int[] { 10, 2, 1, 5 });
+            int[] array = SortingLogic.BubbleSort(new int[] { 10, 2, 1, 5 });
             Console.WriteLine("Selection Sort :");
             for (int i = 0; i < array.Length; i++)
             {
@@ -100,25 +100,25 @@ namespace LogicTest
             }
             
             Console.WriteLine("\nSelection Sort :");
-            array = ArrayLogic.SelectionSort(new int[] { 10, 2, 1, 5 });
+            array = SortingLogic.SelectionSort(new int[] { 10, 2, 1, 5 });
             for (int i = 0; i < array.Length; i++)
             {
                 Console.Write("[ " + array[i] + " ] ");
             }
 
             Console.WriteLine("\nInsert Sort :");
-            array = ArrayLogic.SelectionSort(new int[] { 10, 2, 1, 5 });
+            array = SortingLogic.SelectionSort(new int[] { 10, 2, 1, 5 });
             for (int i = 0; i < array.Length; i++)
             {
                 Console.Write("[ " + array[i] + " ] ");
             }
 
-            //Console.WriteLine("\nMerge Sort :");
-            //array = ArrayManipulation.MergeSort(new int[] { 1, 3, 7, 5 });
-            //for (int i = 0; i < array.Length; i++)
-            //{
-            //    Console.Write("[ " + array[i] + " ] ");
-            //}
+            Console.WriteLine("\nMerge Sort :");
+            array = SortingLogic.MergeSort(new int[] { 1, 3, 7, 5 });
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write("[ " + array[i] + " ] ");
+            }
 
             Console.WriteLine("\nMerge Two Array Sort :");
             array = ArrayLogic.MergeTwoArray(new int[] { 1, 2, 3, 5 }, new int[] { 6, 7, 8, 9, 10, 11, 12 });

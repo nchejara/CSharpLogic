@@ -6,3 +6,11 @@ D:\CSharpLogic\WicresoftDev\LogicTest\bin\Debug\WicresoftDev.CSharpLogic.pdb
 D:\CSharpLogic\WicresoftDev\LogicTest\obj\Debug\LogicTest.csprojResolveAssemblyReference.cache
 D:\CSharpLogic\WicresoftDev\LogicTest\obj\Debug\LogicTest.exe
 D:\CSharpLogic\WicresoftDev\LogicTest\obj\Debug\LogicTest.pdb
+D:\Git\CSharpLogic\WicresoftDev\LogicTest\bin\Debug\LogicTest.exe.config
+D:\Git\CSharpLogic\WicresoftDev\LogicTest\obj\Debug\LogicTest.exe
+D:\Git\CSharpLogic\WicresoftDev\LogicTest\obj\Debug\LogicTest.pdb
+D:\Git\CSharpLogic\WicresoftDev\LogicTest\bin\Debug\LogicTest.exe
+D:\Git\CSharpLogic\WicresoftDev\LogicTest\bin\Debug\LogicTest.pdb
+D:\Git\CSharpLogic\WicresoftDev\LogicTest\bin\Debug\WicresoftDev.CSharpLogic.dll
+D:\Git\CSharpLogic\WicresoftDev\LogicTest\bin\Debug\WicresoftDev.CSharpLogic.pdb
+D:\Git\CSharpLogic\WicresoftDev\LogicTest\obj\Debug\LogicTest.csprojResolveAssemblyReference.cache
