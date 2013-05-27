@@ -1,0 +1,109 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0045)http://www.xpode.com/Print.aspx -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><HTML 
+xmlns="http://www.w3.org/1999/xhtml"><HEAD><META content="IE=10.000" 
+http-equiv="X-UA-Compatible">
+<TITLE>	Explain different types of linked lists. </TITLE>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8"><LINK href="LinkedList%20Doc_files/Print.css" 
+rel="stylesheet">
+<META name="robots" content="noindex">
+<META name="GENERATOR" content="MSHTML 10.00.9200.16578"></HEAD> 
+<BODY>
+<SCRIPT>window.print()</SCRIPT>
+     
+<FORM name="form1" id="form1" action="Print.aspx?Articleid=284" method="post">
+<DIV><INPUT name="__VIEWSTATE" id="__VIEWSTATE" type="hidden" value="/wEPDwUKLTc5NjQ1MzMyNg9kFgICAw9kFgICAw88KwAJAQAPFgQeCERhdGFLZXlzFgAeC18hSXRlbUNvdW50AgFkFgJmD2QWAmYPFQYoRXhwbGFpbiBkaWZmZXJlbnQgdHlwZXMgb2YgbGlua2VkIGxpc3RzLsMUPHA+PHA+DQoNCjEuCUxpbmVhciBMaW5rZWQgTGlzdCBvciBPbmUgV2F5IExpc3Qgb3IgU2luZ2x5IExpbmtlZCBMaXN0Oi0NCjxiciAvPjxiciAvPg0KSXQgaXMgbGluZWFyIGNvbGxlY3Rpb24gb2YgZGF0YSBlbGVtZW50cyB3aGljaCBhcmUgY2FsbGVkIOKAmE5vZGVz4oCZLiBUaGUgZWxlbWVudHMgbWF5IG9yIG1heSBub3QgYmUgc3RvcmVkIGluIGNvbnNlY3V0aXZlIG1lbW9yeSBsb2NhdGlvbnMuIFNvIHBvaW50ZXJzIGFyZSB1c2VkIG1haW50YWluIGxpbmVhciBvcmRlci4gRWFjaCBub2RlIGlzIGRpdmlkZWQgaW50byB0d28gcGFydHMuIFRoZSBmaXJzdCBwYXJ0IGNvbnRhaW5zIHRoZSBpbmZvcm1hdGlvbiBvZiB0aGUgZWxlbWVudCBhbmQgaXMgY2FsbGVkIOKAmElORk8gRmllbGTigJkuIFRoZSBzZWNvbmQgcGFydCBjb250YWlucyB0aGUgYWRkcmVzcyBvZiB0aGUgbmV4dCBub2RlIGFuZCBpcyBjYWxsZWQg4oCYTElOSyBGaWVsZOKAmSBvciDigJhORVhUIFBvaW50ZXIgRmllbGTigJkuIFRoZSBTVEFSVCBjb250YWlucyB0aGUgc3RhcnRpbmcgYWRkcmVzcyBvZiB0aGUgbGlua2VkIGxpc3QgaS5lLiBpdCBjb250YWlucyB0aGUgYWRkcmVzcyBvZiB0aGUgZmlyc3Qgbm9kZSBvZiB0aGUgbGlua2VkIGxpc3QuIFRoZSBMSU5LIEZpZWxkIG9mIGxhc3Qgbm9kZSBjb250YWlucyBOVUxMIFZhbHVlIHdoaWNoIGluZGljYXRlcyB0aGF0IGl0IGlzIHRoZSBlbmQgb2YgbGlua2VkIGxpc3QuIEl0IGlzIHNob3duIGJlbG93Og0KPGltZyBzcmM9Imh0dHA6Ly94cG9kZS5jb20vL0Rvd25sb2Fkcy9HYWxsZXJ5L2Z1bGxJbWFnZS8xODIwMTAxMTg1Mjk4MExpbmVhciBMaW5rZWQgTGlzdCBvciBPbmUgV2F5IExpc3Qgb3IgU2luZ2x5IExpbmtlZCBMaXN0LkpQRyIgYWx0PSJMaW5lYXIgTGlua2VkIExpc3Qgb3IgT25lIFdheSBMaXN0IG9yIFNpbmdseSBMaW5rZWQgTGlzdCIgdGl0bGU9IkxpbmVhciBMaW5rZWQgTGlzdCBvciBPbmUgV2F5IExpc3Qgb3IgU2luZ2x5IExpbmtlZCBMaXN0IiAvPjxiciAvPjxiciAvPjxiPg0KMi4gRG91Ymx5IExpbmtlZCBMaXN0IG9yIFR3by1XYXkgTGlua2VkIExpc3Qgb3IgVHdvLVdheSBDaGFpbjotPC9iPjxiciAvPjxiciAvPg0KSW4gaXQgZWFjaCBub2RlIGlzIGRpdmlkZWQgaW50byB0aHJlZSBwYXJ0czoNCjxiciAvPjxiciAvPg0KMS4JVGhlIGZpcnN0IHBhcnQgaXMgUFJFViBwYXJ0LiBJdCBpcyBwcmV2aW91cyBwb2ludGVyIGZpZWxkLiBJdCBjb250YWlucyB0aGUgYWRkcmVzcyBvZiB0aGUgbm9kZSB3aGljaCBpcyBiZWZvcmUgdGhlIGN1cnJlbnQgbm9kZS48YnIgLz48YnIgLz4NCjIuCVRoZSBzZWNvbmQgcGFydCBpcyB0aGUgSU5GTyBwYXJ0LiBJdCBjb250YWlucyB0aGUgaW5mb3JtYXRpb24gb2YgdGhlIGVsZW1lbnQuPGJyIC8+PGJyIC8+DQozLglUaGUgdGhpcmQgcGFydCBpcyBORVhUIHBhcnQuIEl0IGlzIG5leHQgcG9pbnRlciBmaWVsZC4gSXQgY29udGFpbnMgdGhlIGFkZHJlc3Mgb2YgdGhlIG5vZGUgd2hpY2ggaXMgYWZ0ZXIgdGhlIGN1cnJlbnQgbm9kZS4NCjxiciAvPjxiciAvPg0KDQpUaGVyZSBhcmUgdHdvIHBvaW50ZXJzIEZJUlNUIGFuZCBMQVNULiBGSVJTVCBwb2ludHMgdG8gdGhlIGZpcnN0IG5vZGUgaW4gdGhlIGxpc3QuIExBU1QgcG9pbnRzIHRvIHRoZSBsYXN0IG5vZGUgaW4gdGhlIGxpc3QuIFRoZSBQUkVWIGZpZWxkIG9mIGZpcnN0IG5vZGUgYW5kIHRoZSBORVhUIGZpZWxkIG9mIGxhc3Qgbm9kZSBjb250YWluIE5VTEwgdmFsdWUuIFRoaXMgc2hvd3MgdGhlIGVuZCBvZiBsaXN0IG9uIGJvdGggc2lkZXMuIFRoaXMgbGlzdCBjYW4gYmUgdHJhdmVyc2VkIGluIGJvdGggZGlyZWN0aW9ucyB0aGF0IGlzIGZvcndhcmQgYW5kIGJhY2t3YXJkLg0KPGJyIC8+PGJyIC8+DQpJdCBpcyBzaG93biBiZWxvdzoNCiAgICAgICA8aW1nIHNyYz0iaHR0cDovL3hwb2RlLmNvbS8vRG93bmxvYWRzL0dhbGxlcnkvZnVsbEltYWdlLzE4MjAxMDExODI0NjQ5RG91Ymx5IExpbmtlZCBMaXN0IG9yIFR3b1dheSBMaW5rZWQgTGlzdCBvciBUd29XYXkgQ2hhaW4uSlBHIiBhbHQ9IkRvdWJseSBMaW5rZWQgTGlzdCBvciBUd29XYXkgTGlua2VkIExpc3Qgb3IgVHdvV2F5IENoYWluIiB0aXRsZT0iRG91Ymx5IExpbmtlZCBMaXN0IG9yIFR3b1dheSBMaW5rZWQgTGlzdCBvciBUd29XYXkgQ2hhaW4iIC8+PGJyIC8+PGJyIC8+PGI+DQozLiBDaXJjdWxhciBMaW5rZWQgTGlzdDotPC9iPjxiciAvPjxiciAvPg0KDQpJbiBpdCB0aGUgbGFzdCBub2RlIGRvZXMgbm90IGNvbnRhaW4gTlVMTCBwb2ludGVyLiBJbnN0ZWFkIHRoZSBsYXN0IG5vZGUgY29udGFpbnMgYSBwb2ludGVyIHRoYXQgaGFzIHRoZSBhZGRyZXNzIG9mIGZpcnN0IG5vZGUgYW5kIHRodXMgcG9pbnRzIGJhY2sgdG8gdGhlIGZpcnN0IG5vZGUuDQo8YnIgLz48YnIgLz4NCg0KDQpJdCBpcyBzaG93biBiZWxvdzoNCjxiciAvPjxiciAvPjxpbWcgc3JjPSJodHRwOi8veHBvZGUuY29tLy9Eb3dubG9hZHMvR2FsbGVyeS9mdWxsSW1hZ2UvMTgyMDEwMTE4NDY5Q2lyY3VsYXIgTGlua2VkIExpc3QuSlBHIiBhbHQ9IkNpcmN1bGFyIExpbmtlZCBMaXN0IiB0aXRsZT0iQ2lyY3VsYXIgTGlua2VkIExpc3QiIC8+PC9wPjwvcD4HaHR0cDovLwdodHRwOi8vDFJvaGl0IGtha3JpYS9JIGFtIHNvZnR3YXJlIGRldmVsb3BlciwgbW9kZXJhdG9yIG9mIHhwb2RlLmNvbWRk"> 
+</DIV>
+<TABLE width="98%" align="center" border="0" cellspacing="3" cellpadding="2">
+  <TBODY>
+  <TR>
+    <TD align="left" class="border-bottom" valign="top">
+      <TABLE width="100%" border="0" cellspacing="0" cellpadding="0">
+        <TBODY>
+        <TR>
+          <TD align="right" colspan="2">                                
+            Xpode.com &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <A style="font-weight: bold; text-decoration: none;" 
+            href="javascript:window.print()">Click here to Print this 
+            article</A>.                             </TD></TR>
+        <TR>
+          <TD align="center" colspan="2">
+            <P align="justify"><SPAN id="lblError"></SPAN>                       
+                          
+            <TABLE id="dlArticle" style="border-collapse: collapse;" border="0" 
+            cellspacing="0">
+              <TBODY>
+              <TR>
+                <TD>
+                  <P><SPAN class="title">                                        
+                              Explain different types of linked lists.           
+                                                        </SPAN>                  
+                                                 <BR><BR>
+                  <P>
+                  <P>1.	Linear Linked List or One Way List or Singly Linked 
+                  List:- <BR><BR>It is linear collection of data elements which 
+                  are called ‘Nodes’. The elements may or may not be stored in 
+                  consecutive memory locations. So pointers are used maintain 
+                  linear order. Each node is divided into two parts. The first 
+                  part contains the information of the element and is called 
+                  ‘INFO Field’. The second part contains the address of the next 
+                  node and is called ‘LINK Field’ or ‘NEXT Pointer Field’. The 
+                  START contains the starting address of the linked list i.e. it 
+                  contains the address of the first node of the linked list. The 
+                  LINK Field of last node contains NULL Value which indicates 
+                  that it is the end of linked list. It is shown below: <IMG 
+                  title="Linear Linked List or One Way List or Singly Linked List" 
+                  alt="Linear Linked List or One Way List or Singly Linked List" 
+                  src="LinkedList%20Doc_files/18201011852980Linear%2520Linked%2520List%2520or%2520One%2520Way%2520List%2520or%2520Singly%2520Linked%2520List.jpg"><BR><BR><B>
+                  2. Doubly Linked List or Two-Way Linked List or Two-Way 
+                  Chain:-</B><BR><BR>In it each node is divided into three 
+                  parts: <BR><BR>1.	The first part is PREV part. It is previous 
+                  pointer field. It contains the address of the node which is 
+                  before the current node.<BR><BR>2.	The second part is the INFO 
+                  part. It contains the information of the element.<BR><BR>
+                  3.	The third part is NEXT part. It is next pointer field. It 
+                  contains the address of the node which is after the current 
+                  node. <BR><BR>There are two pointers FIRST and LAST. FIRST 
+                  points to the first node in the list. LAST points to the last 
+                  node in the list. The PREV field of first node and the NEXT 
+                  field of last node contain NULL value. This shows the end of 
+                  list on both sides. This list can be traversed in both 
+                  directions that is forward and backward. <BR><BR>It is shown 
+                  below:        <IMG title="Doubly Linked List or TwoWay Linked List or TwoWay Chain" 
+                  alt="Doubly Linked List or TwoWay Linked List or TwoWay Chain" 
+                  src="LinkedList%20Doc_files/18201011824649Doubly%2520Linked%2520List%2520or%2520TwoWay%2520Linked%2520List%2520or%2520TwoWay%2520Chain.jpg"><BR><BR><B>
+                  3. Circular Linked List:-</B><BR><BR>In it the last node does 
+                  not contain NULL pointer. Instead the last node contains a 
+                  pointer that has the address of first node and thus points 
+                  back to the first node. <BR><BR>It is shown below: 
+                  <BR><BR><IMG title="Circular Linked List" alt="Circular Linked List" 
+                  src="LinkedList%20Doc_files/182010118469Circular%2520Linked%2520List.jpg"></P>
+                  <P></P><BR><BR>                                                
+                  http://                                                 <BR>   
+                                                               http://           
+                                                        <BR><BR><B>Contributed 
+                  by:</B><BR><B>                                                 
+                     Rohit kakria                                                
+                   </B>                                                 <BR>     
+                                                             I am software 
+                  developer, moderator of xpode.com                              
+                                     <BR><BR><B>Resourse address on xpode.com 
+                  </B>                                                 <BR><B>   
+                                                                   
+                  http://www.xpode.com/Print.aspx?Articleid=284                  
+                                                 </B>                            
+                                   
+                  <P></P>
+                  <P>Click here to  go on website <A href="http://www.xpode.com/"></A></P></TD></TR></TBODY></TABLE>
+            <P></P></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></FORM>
+<SCRIPT type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </SCRIPT>
+     
+<SCRIPT type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-11255027-1");
+pageTracker._setDomainName(".xpode.com");
+pageTracker._trackPageview();
+} catch(err) {}</SCRIPT>
+ </BODY></HTML>
