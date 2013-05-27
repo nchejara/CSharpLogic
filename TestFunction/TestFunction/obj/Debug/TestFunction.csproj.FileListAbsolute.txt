@@ -1,6 +1,0 @@
-D:\Practice\TestFunction\TestFunction\bin\Debug\TestFunction.exe.config
-D:\Practice\TestFunction\TestFunction\obj\Debug\TestFunction.csprojResolveAssemblyReference.cache
-D:\Practice\TestFunction\TestFunction\bin\Debug\TestFunction.exe
-D:\Practice\TestFunction\TestFunction\bin\Debug\TestFunction.pdb
-D:\Practice\TestFunction\TestFunction\obj\Debug\TestFunction.exe
-D:\Practice\TestFunction\TestFunction\obj\Debug\TestFunction.pdb
