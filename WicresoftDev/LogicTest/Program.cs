@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WicresoftDev.CSharpLogic;
+using WicresoftDev.CSharpLogic.Tree;
 
 namespace LogicTest
 {
@@ -11,10 +12,8 @@ namespace LogicTest
     {
         static void Main(string[] args)
         {
-            string s = "test string";
-                s.Replace("test", "Best");
-            Console.WriteLine(s);
-            
+
+
             //Console.WriteLine(StringLogic.Reverse("Naren"));
             //Console.WriteLine(StringLogic.Trim("      N c\nM p\nKeshav     "));
             //Console.WriteLine(StringLogic.LeftTrim("      N c\nM p\nKeshav     "));
@@ -49,7 +48,7 @@ namespace LogicTest
             //Console.WriteLine("\nTotal Node are {0}", llm.size);
 
             ////Doubly linked list
-            
+
             //DoublyLinkedList list = new DoublyLinkedList();
             //list.AddNode("A");
             //list.AddNode("B");
@@ -102,7 +101,7 @@ namespace LogicTest
             {
                 Console.Write("[ " + array[i] + " ] ");
             }
-            
+
             Console.WriteLine("\nSelection Sort :");
             array = SortingLogic.SelectionSort(new int[] { 10, 2, 1, 5 });
             for (int i = 0; i < array.Length; i++)
@@ -139,11 +138,38 @@ namespace LogicTest
             }
 
             Console.WriteLine("\nRemove specifice index element  :");
-            array = ArrayLogic.RemoveAt(new int[] { 6, 7, 6, 7, 10, 10, 12 },3);
+            array = ArrayLogic.RemoveAt(new int[] { 6, 7, 6, 7, 10, 10, 12 }, 3);
             for (int i = 0; i < array.Length; i++)
             {
                 Console.Write("[ " + array[i] + " ] ");
             }
+
+            //Binary search tree
+            BinarySearchTree.Instance.InsertNode(10);
+            BinarySearchTree.Instance.InsertNode(5);
+            BinarySearchTree.Instance.InsertNode(1);
+            BinarySearchTree.Instance.InsertNode(3);
+            //Check IsDuplicateNode() method
+            BinarySearchTree.Instance.InsertNode(3);
+            BinarySearchTree.Instance.InsertNode(12);
+            BinarySearchTree.Instance.InsertNode(11);
+            BinarySearchTree.Instance.InsertNode(13);
+
+            Console.WriteLine("\n Show pre-order node node in tree");
+            BinarySearchTree.Instance.ShowPreOrderTree();
+            
+            Console.WriteLine("\n Show In-order node node in tree");
+            BinarySearchTree.Instance.ShowInOrderTree();
+            
+            Console.WriteLine("\n Show Post-order node node in tree");
+            BinarySearchTree.Instance.ShowPostOrderTree();
+
+            BinarySearchTree.Instance.RemoveNode(10);
+            Console.WriteLine("\n");
+            BinarySearchTree.Instance.ShowPreOrderTree();
+
+
+            
             Console.ReadLine();
         }
     }

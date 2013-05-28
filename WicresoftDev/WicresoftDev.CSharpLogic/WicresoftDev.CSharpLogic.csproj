@@ -48,6 +48,7 @@
     <Compile Include="SinglyLinkedList.cs" />
     <Compile Include="SortingLogic.cs" />
     <Compile Include="StringLogic.cs" />
+    <Compile Include="Tree\BinarySearchTree.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
