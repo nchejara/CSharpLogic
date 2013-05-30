@@ -8,7 +8,7 @@ namespace WicresoftDev.CSharpLogic.Tree
 {
     public class BinarySearchTree
     {
-        
+
         public class Node
         {
             public int Data { get; set; }
@@ -22,12 +22,12 @@ namespace WicresoftDev.CSharpLogic.Tree
         {
             get { return instance; }
         }
-       
+
         public BinarySearchTree()
         {
             Root = null;
             Size = 0;
-            
+
         }
         /// <summary>
         /// Add Root Node in binary tree.
@@ -43,7 +43,7 @@ namespace WicresoftDev.CSharpLogic.Tree
 
         public int Size { get; private set; }
         public Node Root;
-        
+
 
         /// <summary>
         /// Insert new Node in binary tree
@@ -51,91 +51,162 @@ namespace WicresoftDev.CSharpLogic.Tree
         /// <param name="data"></param>
         public void InsertNode(int data)
         {
-            InsertNode(Root, data);
+            Size++;
+            var newNode = new Node { Data = data };
+
+            if (Root == null)
+            {
+                Root = AddRootNode(newNode);
+            }
+
+            InsertNode(Root, newNode);
         }
         /// <summary>
         /// Insert new node and also create Root node if it is not exists in the tree
         /// </summary>
         /// <param name="root"></param>
         /// <param name="data"></param>
-        private void InsertNode(Node root, int data)
+        private void InsertNode(Node root, Node newNode)
         {
-            if (!IsDuplicateNode(data)) 
+            if (!IsDuplicateNode(newNode.Data))
             {
-                Size++;
-                var newNode = new Node { Data = data };
-
-                if (Root == null)
+                Node Current = root;
+                Node Parent;
+                while (true)
                 {
-                    Root = AddRootNode(newNode);
+                    Parent = Current;
+                    if (newNode.Data < Current.Data)
+                    {
+                        Current = Current.Left;
+                        if (Current == null)
+                        {
+                            Parent.Left = newNode;
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        Current = Current.Right;
+                        if (Current == null)
+                        {
+                            Parent.Right = newNode;
+                            return;
+                        }
+                    }
+                }
+
+            }
+        }
+
+        /// <summary>
+        /// Delete a node from the Binary tree
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        public bool RemoveNode(int data)
+        {
+            if (Root == null)
+                return false;
+
+            Node NodeToRemoved;
+            Node NodeToMoved;
+            Node Parent = Root;
+            Node Current = Root;
+           
+            //Case - 1
+            // Search node which is going to delete and also keep track of delete node arent.
+            while (Current.Data != data)
+            {
+                Parent = Current;
+                if (data < Current.Data)
+                {
+                    Current = Current.Left;
                 }
                 else
                 {
-                    if (newNode.Data < root.Data)
-                    {
-                        if (root.Left == null)
-                        {
-                            root.Left = newNode;
-                        }
-                        else
-                        {
-                            root = root.Left;
-                            InsertNode(root, newNode.Data);
-                        }
-                    }
-                    else if (newNode.Data > root.Data)
-                    {
-                        if (root.Right == null)
-                        {
-                            root.Right = newNode;
-                        }
-                        else
-                        {
-                            root = root.Right;
-                            InsertNode(root, newNode.Data);
-                        }
-                    }
+                    Current = Current.Right;
                 }
             }
-        }
 
-        public Node RemoveNode(int data)
-        {
-            return RemoveNode(Root, data);
-        }
-        public Node RemoveNode(Node root, int data)
-        {
-            if (Root == null)
-                return null;
+            //If Current == null it means "the node which you are looking in the tree that wasn't exists in tree
+            if (Current == null)
+                return false;
+            
+            NodeToRemoved = Current;
 
-            if (root.Data == data)
+            //Case -2
+            // Deleting a leaf or a node with one child: 
+            // Remove the node and replace it with the child (or null if it has none)
+
+            if (NodeToRemoved.Left == null || NodeToRemoved.Right == null)
             {
-                Root = root.Right;
-                Node temp = Root;
-                
-                while (temp != null)
+                Node Child;// keep track of it child
+                if (NodeToRemoved.Left == null)
                 {
-                    //deleted root
-                    
-
-
-                    temp = temp.Right;
+                    Child = NodeToRemoved.Right;
                 }
-                root = root.Right;
+                else
+                {
+                    Child = NodeToRemoved.Left;
+                }
+            
+                //If No Parent node 
+                if (Parent == null)
+                {
+                    Root = Child;
+                }
+                else
+                {
+                    //Assign Child node to the parent based on the condition
+                    if (NodeToRemoved.Data > Parent.Data)
+                    {
+                        Parent.Right = Child;
+                    }
+                    else
+                    {
+                        Parent.Left = Child;
+                    }
+                }
             }
-            else if(root.Data < data)
+            else
             {
-                root = root.Left;
-                RemoveNode(root, data);
-            }
-            else if (root.Data > data)
-            {
-                root = root.Right;
-                RemoveNode(root, data);
-            }
 
-            return root;
+                //Case - 3
+                // Deleting a node with two children: 
+                // Call the node to be deleted NodeToRemoved. Do not delete NodeToRemoved. 
+                // Instead, choose either its in-order successor node or its in-order predecessor node, NodeToMoved. 
+                // Replace the value of NodeToRemoved with the value of NodeToMoved, then delete NodeToMoved.
+
+                NodeToMoved = FindSuccessor(NodeToRemoved);
+                NodeToRemoved.Data = NodeToMoved.Data;
+               // NodeToRemoved.Right = null;
+            }
+            return true;
+
+
         }
+        private Node FindSuccessor(Node delNode)
+        {
+            Node SParent = delNode;
+            Node Successor = delNode;
+            Node Current = delNode.Right;
+            while (Current != null)
+            {
+                SParent = Successor;
+                Successor = Current;
+                Current = Current.Left;
+            }
+            if (Successor != delNode.Right)
+            {
+                SParent.Left = Successor.Right;
+                Successor.Right = delNode.Right;
+                
+            }
+            return Successor;
+        }
+
+
+        #region "Tree Depth Traversal"
 
         /// <summary>
         /// Show all node which are in Binary Searched Tree
@@ -150,7 +221,7 @@ namespace WicresoftDev.CSharpLogic.Tree
                 return;
 
             ShowPreOrderTree(root.Left);
-            Console.Write("[ "+ root.Data + " ] ");
+            Console.Write("[ " + root.Data + " ] ");
             ShowPreOrderTree(root.Right);
 
         }
@@ -190,6 +261,8 @@ namespace WicresoftDev.CSharpLogic.Tree
 
         }
 
+        #endregion
+
         /// <summary>
         /// Check specific node in the tree. If tree contain node in the list then return true and avoid adding duplicate node  in the tree
         /// </summary>
@@ -197,22 +270,102 @@ namespace WicresoftDev.CSharpLogic.Tree
         /// <returns></returns>
         public bool IsDuplicateNode(int data)
         {
-            return IsDuplicateNode(Root, data);
-        }
-        private bool IsDuplicateNode(Node root, int data)
-        {
-            if (root == null)
-                return false;
+            Node Current = Root;
+            
+            while (Current.Data != data)
+            {
+                if (data < Current.Data)
+                {
+                    Current = Current.Left;
+                }
+                else
+                {
+                    Current = Current.Right;
+                }
 
-            IsDuplicateNode(root.Left,data);
-            if (root.Data != data)
-                return false;
-            IsDuplicateNode(root.Right,data);
+                if (Current == null)
+                    return false;
+            }
 
             return true;
         }
 
+        /// <summary>
+        /// Find Minmum node in the Binary search tree
+        /// </summary>
+        /// <returns></returns>
+        public Node FindMinNode()
+        {
+            Node tempNode = Root;
 
-        
+            if (tempNode == null)
+                return null; ;
+
+            while (tempNode.Left != null)
+            {
+                tempNode = tempNode.Left;
+            }
+
+            return tempNode;
+        }
+
+        /// <summary>
+        /// Find maximum node in the Binary search tree
+        /// </summary>
+        /// <returns></returns>
+        public Node FindMaxNode()
+        {
+            Node tempNode = Root;
+
+            if (tempNode == null)
+                return null; ;
+
+            while (tempNode.Right != null)
+            {
+                tempNode = tempNode.Right;
+            }
+
+            return tempNode;
+        }
+
+        /// <summary>
+        /// Find max using recursive method
+        /// </summary>
+        public Node FindMaxNodeRecursive()
+        {
+            if (Root == null)
+                return null;
+            return FindMaxNodeRecursive(Root);
+        }
+        private Node FindMaxNodeRecursive(Node root)
+        {
+            if (root.Right == null)
+            {
+                return root;
+            }
+            return FindMaxNodeRecursive(root.Right);
+        }
+
+        /// <summary>
+        /// Find minimum node in the binary search tree ...
+        /// </summary>
+        /// <returns></returns>
+        public Node FindMinNodeRecursive()
+        {
+            if (Root == null)
+                return null;
+
+            return FindMinNodeRecursive(Root);
+        }
+        private Node FindMinNodeRecursive(Node root)
+        {
+            if (root.Left == null)
+            {
+                return root;
+            }
+            return FindMinNodeRecursive(root.Left);
+            
+        }
+
     }
 }

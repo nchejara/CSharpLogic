@@ -47,6 +47,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SinglyLinkedList.cs" />
     <Compile Include="SortingLogic.cs" />
+    <Compile Include="Stacks\StackLogic.cs" />
     <Compile Include="StringLogic.cs" />
     <Compile Include="Tree\BinarySearchTree.cs" />
   </ItemGroup>

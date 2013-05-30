@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WicresoftDev.CSharpLogic;
 using WicresoftDev.CSharpLogic.Tree;
+using WicresoftDev.CSharpLogic.Stacks;
 
 namespace LogicTest
 {
@@ -147,13 +148,20 @@ namespace LogicTest
             //Binary search tree
             BinarySearchTree.Instance.InsertNode(10);
             BinarySearchTree.Instance.InsertNode(5);
+            BinarySearchTree.Instance.InsertNode(2);
             BinarySearchTree.Instance.InsertNode(1);
             BinarySearchTree.Instance.InsertNode(3);
+            BinarySearchTree.Instance.InsertNode(7);
+            BinarySearchTree.Instance.InsertNode(6);
+            BinarySearchTree.Instance.InsertNode(8);
             //Check IsDuplicateNode() method
             BinarySearchTree.Instance.InsertNode(3);
-            BinarySearchTree.Instance.InsertNode(12);
-            BinarySearchTree.Instance.InsertNode(11);
-            BinarySearchTree.Instance.InsertNode(13);
+            //BinarySearchTree.Instance.InsertNode(12);
+            //BinarySearchTree.Instance.InsertNode(11);
+            //BinarySearchTree.Instance.InsertNode(13);
+
+            BinarySearchTree.Instance.RemoveNode(5);
+            Console.WriteLine("\n");
 
             Console.WriteLine("\n Show pre-order node node in tree");
             BinarySearchTree.Instance.ShowPreOrderTree();
@@ -164,12 +172,36 @@ namespace LogicTest
             Console.WriteLine("\n Show Post-order node node in tree");
             BinarySearchTree.Instance.ShowPostOrderTree();
 
-            BinarySearchTree.Instance.RemoveNode(10);
-            Console.WriteLine("\n");
-            BinarySearchTree.Instance.ShowPreOrderTree();
-
-
+            Console.WriteLine("\nMinmum node is : {0}", BinarySearchTree.Instance.FindMinNode().Data);
+            Console.WriteLine("\nMaximum node is : {0}", BinarySearchTree.Instance.FindMaxNode().Data);
+            //Recursive
+            Console.WriteLine("\nMaximum node is : {0}", BinarySearchTree.Instance.FindMaxNodeRecursive().Data);
+            Console.WriteLine("\nMinmum node is : {0}", BinarySearchTree.Instance.FindMinNodeRecursive().Data);
+           
             
+            try
+            {
+                //Check Stack Operation
+                //push
+                for (int i = 0; i <= 15; i++)
+                {
+                    StackLogic.Stack.Instance.Push(i);
+                }
+
+                //pop
+                for (int i = 0; i <= 14; i++)
+                {
+                    Console.Write("[ " + StackLogic.Stack.Instance.Pop() + " ] ");
+                }
+
+                //peek
+                //Console.Write("\n Peek :{0}", StackLogic.Stack.Instance.Peek());
+
+            }
+            catch (InvalidOperationException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
             Console.ReadLine();
         }
     }
