@@ -71,6 +71,17 @@ namespace WicresoftDev.CSharpLogic
             }
             return decimalNumer;
         }
+        public static int BinaryToDecimal(string binaryNumber)
+        {
+            int decimalNumer = 0;
+            int j = binaryNumber.Length - 1;
+            for (int i = 0; i < binaryNumber.Length; i++)
+            {
+                decimalNumer += Convert.ToInt32(binaryNumber[i].ToString()) * (int)Math.Pow(2, j);
+                j--;
+            }
+            return decimalNumer;
+        }
         public static string OctalToBinary(string octalNumber)
         {
             return DecimalToBinary(OctalToDecimal(octalNumber));
@@ -88,6 +99,50 @@ namespace WicresoftDev.CSharpLogic
             }
 
             return count;
+        }
+
+        /// <summary>
+        /// Adding same length binary number
+        /// </summary>
+        /// <param name="binaryNum1">Binary number</param>
+        /// <param name="binaryNum2">Binary number</param>
+        /// <returns></returns>
+        public static string AddBinaryNumber(string binaryNum1, string binaryNum2)
+        {
+            if(binaryNum1.Length != binaryNum2.Length)
+                return "Both binary number should have the same length!";
+            
+            string result = string .Empty;
+            int carry = 0;
+
+            for(int i = binaryNum2.Length-1; i >= 0; i--)
+            {
+                int res = Convert.ToInt16(binaryNum1[i].ToString()) + Convert.ToInt16(binaryNum2[i].ToString()) + carry;
+
+                if(res == 2)
+                {
+                    carry = 1;
+                    result = result + "0";
+                }
+                else if (res  == 3)
+                {
+                    carry = 1;
+                    result = result + "1";
+                }
+                else
+                {
+                   
+                    result += res.ToString();
+                    carry = 0;
+                }
+            }
+            if (carry > 0)
+                result += carry;
+
+
+            result = StringLogic.Reverse(result); // reverse the result
+
+            return result;
         }
     }
 }

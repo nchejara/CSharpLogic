@@ -96,112 +96,120 @@ namespace LogicTest
             //Console.WriteLine("\nOctal   [{0}] Decimal is : [{1}]", 24, DigitalLogic.OctalToDecimal("24"));
             //Console.WriteLine("\nOctal   [{0}] Binary is : [{1}]", 8, DigitalLogic.OctalToBinary("8"));
 
-            int[] array = SortingLogic.BubbleSort(new int[] { 10, 2, 1, 5 });
-            Console.WriteLine("Selection Sort :");
-            for (int i = 0; i < array.Length; i++)
-            {
-                Console.Write("[ " + array[i] + " ] ");
-            }
+            //int[] array = SortingLogic.BubbleSort(new int[] { 10, 2, 1, 5 });
+            //Console.WriteLine("Selection Sort :");
+            //for (int i = 0; i < array.Length; i++)
+            //{
+            //    Console.Write("[ " + array[i] + " ] ");
+            //}
 
-            Console.WriteLine("\nSelection Sort :");
-            array = SortingLogic.SelectionSort(new int[] { 10, 2, 1, 5 });
-            for (int i = 0; i < array.Length; i++)
-            {
-                Console.Write("[ " + array[i] + " ] ");
-            }
+            //Console.WriteLine("\nSelection Sort :");
+            //array = SortingLogic.SelectionSort(new int[] { 10, 2, 1, 5 });
+            //for (int i = 0; i < array.Length; i++)
+            //{
+            //    Console.Write("[ " + array[i] + " ] ");
+            //}
 
-            Console.WriteLine("\nInsert Sort :");
-            array = SortingLogic.SelectionSort(new int[] { 10, 2, 1, 5 });
-            for (int i = 0; i < array.Length; i++)
-            {
-                Console.Write("[ " + array[i] + " ] ");
-            }
+            //Console.WriteLine("\nInsert Sort :");
+            //array = SortingLogic.SelectionSort(new int[] { 10, 2, 1, 5 });
+            //for (int i = 0; i < array.Length; i++)
+            //{
+            //    Console.Write("[ " + array[i] + " ] ");
+            //}
 
-            Console.WriteLine("\nMerge Sort :");
-            array = SortingLogic.MergeSort(new int[] { 1, 3, 7, 5 });
-            for (int i = 0; i < array.Length; i++)
-            {
-                Console.Write("[ " + array[i] + " ] ");
-            }
+            //Console.WriteLine("\nMerge Sort :");
+            //array = SortingLogic.MergeSort(new int[] { 1, 3, 7, 5 });
+            //for (int i = 0; i < array.Length; i++)
+            //{
+            //    Console.Write("[ " + array[i] + " ] ");
+            //}
 
-            Console.WriteLine("\nMerge Two Array Sort :");
-            array = ArrayLogic.MergeTwoArray(new int[] { 1, 2, 3, 5 }, new int[] { 6, 7, 8, 9, 10, 11, 12 });
-            for (int i = 0; i < array.Length; i++)
-            {
-                Console.Write("[ " + array[i] + " ] ");
-            }
+            //Console.WriteLine("\nMerge Two Array Sort :");
+            //array = ArrayLogic.MergeTwoArray(new int[] { 1, 2, 3, 5 }, new int[] { 6, 7, 8, 9, 10, 11, 12 });
+            //for (int i = 0; i < array.Length; i++)
+            //{
+            //    Console.Write("[ " + array[i] + " ] ");
+            //}
 
-            Console.WriteLine("\nRemove duplicate item from an array :");
-            array = ArrayLogic.RemoveDuplicateElement(new int[] { 6, 7, 6, 7, 10, 10, 12 });
-            for (int i = 0; i < array.Length; i++)
-            {
-                Console.Write("[ " + array[i] + " ] ");
-            }
+            //Console.WriteLine("\nRemove duplicate item from an array :");
+            //array = ArrayLogic.RemoveDuplicateElement(new int[] { 6, 7, 6, 7, 10, 10, 12 });
+            //for (int i = 0; i < array.Length; i++)
+            //{
+            //    Console.Write("[ " + array[i] + " ] ");
+            //}
 
-            Console.WriteLine("\nRemove specifice index element  :");
-            array = ArrayLogic.RemoveAt(new int[] { 6, 7, 6, 7, 10, 10, 12 }, 3);
-            for (int i = 0; i < array.Length; i++)
-            {
-                Console.Write("[ " + array[i] + " ] ");
-            }
+            //Console.WriteLine("\nRemove specifice index element  :");
+            //array = ArrayLogic.RemoveAt(new int[] { 6, 7, 6, 7, 10, 10, 12 }, 3);
+            //for (int i = 0; i < array.Length; i++)
+            //{
+            //    Console.Write("[ " + array[i] + " ] ");
+            //}
 
-            //Binary search tree
-            BinarySearchTree.Instance.InsertNode(10);
-            BinarySearchTree.Instance.InsertNode(5);
-            BinarySearchTree.Instance.InsertNode(2);
-            BinarySearchTree.Instance.InsertNode(1);
-            BinarySearchTree.Instance.InsertNode(3);
-            BinarySearchTree.Instance.InsertNode(7);
-            BinarySearchTree.Instance.InsertNode(6);
-            BinarySearchTree.Instance.InsertNode(8);
-            //Check IsDuplicateNode() method
-            BinarySearchTree.Instance.InsertNode(3);
-            //BinarySearchTree.Instance.InsertNode(12);
-            //BinarySearchTree.Instance.InsertNode(11);
-            //BinarySearchTree.Instance.InsertNode(13);
+            ////Binary search tree
+            //BinarySearchTree.Instance.InsertNode(10);
+            //BinarySearchTree.Instance.InsertNode(5);
+            //BinarySearchTree.Instance.InsertNode(2);
+            //BinarySearchTree.Instance.InsertNode(1);
+            //BinarySearchTree.Instance.InsertNode(3);
+            //BinarySearchTree.Instance.InsertNode(7);
+            //BinarySearchTree.Instance.InsertNode(6);
+            //BinarySearchTree.Instance.InsertNode(8);
+            ////Check IsDuplicateNode() method
+            //BinarySearchTree.Instance.InsertNode(3);
+            ////BinarySearchTree.Instance.InsertNode(12);
+            ////BinarySearchTree.Instance.InsertNode(11);
+            ////BinarySearchTree.Instance.InsertNode(13);
 
-            BinarySearchTree.Instance.RemoveNode(5);
-            Console.WriteLine("\n");
+            //BinarySearchTree.Instance.RemoveNode(5);
+            //Console.WriteLine("\n");
 
-            Console.WriteLine("\n Show pre-order node node in tree");
-            BinarySearchTree.Instance.ShowPreOrderTree();
+            //Console.WriteLine("\n Show pre-order node node in tree");
+            //BinarySearchTree.Instance.ShowPreOrderTree();
             
-            Console.WriteLine("\n Show In-order node node in tree");
-            BinarySearchTree.Instance.ShowInOrderTree();
+            //Console.WriteLine("\n Show In-order node node in tree");
+            //BinarySearchTree.Instance.ShowInOrderTree();
             
-            Console.WriteLine("\n Show Post-order node node in tree");
-            BinarySearchTree.Instance.ShowPostOrderTree();
+            //Console.WriteLine("\n Show Post-order node node in tree");
+            //BinarySearchTree.Instance.ShowPostOrderTree();
 
-            Console.WriteLine("\nMinmum node is : {0}", BinarySearchTree.Instance.FindMinNode().Data);
-            Console.WriteLine("\nMaximum node is : {0}", BinarySearchTree.Instance.FindMaxNode().Data);
-            //Recursive
-            Console.WriteLine("\nMaximum node is : {0}", BinarySearchTree.Instance.FindMaxNodeRecursive().Data);
-            Console.WriteLine("\nMinmum node is : {0}", BinarySearchTree.Instance.FindMinNodeRecursive().Data);
+            //Console.WriteLine("\nMinmum node is : {0}", BinarySearchTree.Instance.FindMinNode().Data);
+            //Console.WriteLine("\nMaximum node is : {0}", BinarySearchTree.Instance.FindMaxNode().Data);
+            ////Recursive
+            //Console.WriteLine("\nMaximum node is : {0}", BinarySearchTree.Instance.FindMaxNodeRecursive().Data);
+            //Console.WriteLine("\nMinmum node is : {0}", BinarySearchTree.Instance.FindMinNodeRecursive().Data);
            
             
-            try
-            {
-                //Check Stack Operation
-                //push
-                for (int i = 0; i <= 15; i++)
-                {
-                    StackLogic.Stack.Instance.Push(i);
-                }
+            //try
+            //{
+            //    //Check Stack Operation
+            //    //push
+            //    for (int i = 0; i <= 15; i++)
+            //    {
+            //        Stack.Instance.Push(i);
+            //    }
 
-                //pop
-                for (int i = 0; i <= 14; i++)
-                {
-                    Console.Write("[ " + StackLogic.Stack.Instance.Pop() + " ] ");
-                }
+            //    //pop
+            //    for (int i = 0; i < 14; i++)
+            //    {
+            //        Console.Write("[ " + Stack.Instance.Pop() + " ] ");
+            //    }
 
-                //peek
-                //Console.Write("\n Peek :{0}", StackLogic.Stack.Instance.Peek());
+            //    //peek
+            //    Console.Write("\n Peek :{0}", Stack.Instance.Peek());
 
-            }
-            catch (InvalidOperationException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            //}
+            //catch (InvalidOperationException ex)
+            //{
+            //    Console.WriteLine(ex.Message);
+            //}
+
+
+            Console.WriteLine("add : 0001 + 0001 = {0}",DigitalLogic.AddBinaryNumber("0001", "0001"));
+            Console.WriteLine("add : 0001 + 0010 = {0}", DigitalLogic.AddBinaryNumber("0001", "0010"));
+            Console.WriteLine("add : 0001 + 0011 = {0}", DigitalLogic.AddBinaryNumber("0001", "0011"));
+            Console.WriteLine("add : 0001 + 0100 = {0}", DigitalLogic.AddBinaryNumber("0001", "0100"));
+            Console.WriteLine("add : 0100 + 0100 = {0}", DigitalLogic.AddBinaryNumber("0100", "0100"));
+            Console.WriteLine("add : 1111 + 1111 = {0}", DigitalLogic.AddBinaryNumber("1111", "1111"));
             Console.ReadLine();
         }
     }
