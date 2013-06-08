@@ -14,6 +14,11 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
+//add SNK file path which we generated using SN.exe
+//[assembly: AssemblyDelaySign(true)]
+//[assembly: AssemblyKeyFile("CSharpLogic.SNK")]
+//[assembly: AssemblyKeyName("")]
+
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 
 // COM, set the ComVisible attribute to true on that type.

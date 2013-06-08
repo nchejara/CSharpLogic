@@ -53,7 +53,7 @@ namespace WicresoftDev.CSharpLogic
         }
         
         //Finding length without using in-build string function
-        private static int Length(string str)
+        public static int Length(string str)
         {
             int length = 0;
             bool done = false;
@@ -191,7 +191,7 @@ namespace WicresoftDev.CSharpLogic
                             count++;
                         }
                     }
-                    i += count; // Add count value in  i variable so look can skipp those space
+                    i += count; // Add count value in  i variable so loop can skip those space
                     count = 0; // Set count equals to 0
                 }
                 else

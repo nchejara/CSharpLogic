@@ -71,6 +71,10 @@ namespace WicresoftDev.CSharpLogic
             }
             return decimalNumer;
         }
+        public static string OctalToBinary(string octalNumber)
+        {
+            return DecimalToBinary(OctalToDecimal(octalNumber));
+        }
         public static int BinaryToDecimal(string binaryNumber)
         {
             int decimalNumer = 0;
@@ -81,10 +85,6 @@ namespace WicresoftDev.CSharpLogic
                 j--;
             }
             return decimalNumer;
-        }
-        public static string OctalToBinary(string octalNumber)
-        {
-            return DecimalToBinary(OctalToDecimal(octalNumber));
         }
         public static int CountDigitBinaryNumber(string bineryNumber, char BineryDigit)
         {

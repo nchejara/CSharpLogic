@@ -57,5 +57,50 @@ namespace WicresoftDev.CSharpLogic
 
             Console.Write("Number 1 = {0} and Number 2 = {1}", num1, num2);
         }
+
+        public static int ATOI(string str)
+        {
+            int sign = 1;
+            int i = 0;
+            int convertedNumber = 0;
+            int len = StringLogic.Length(str);
+            char[] temp = toCharArray(str);
+            //Check whether number is positive or negative
+            if (str[0] == '-')
+            {
+                sign = -1;
+                i = 1;
+            }
+            for (; i < len; i++)
+            {
+                if (temp[i] >= '0' && temp[i] <= '9')
+                {
+                    convertedNumber = convertedNumber * 10 + (temp[i] - 48);
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+
+            return convertedNumber * sign;
+        }
+
+        public static char[] toCharArray(string str)
+        {
+            if (str == null)
+                return null;
+
+            int len = StringLogic.Length(str);
+            char[] charArray = new char[len];
+
+            for (int i = 0; i < len; i++)
+            {
+                charArray[i] = str[i];
+            }
+
+            return charArray;
+        }
+
     }
 }
