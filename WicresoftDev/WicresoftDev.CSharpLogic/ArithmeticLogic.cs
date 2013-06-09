@@ -63,8 +63,9 @@ namespace WicresoftDev.CSharpLogic
             int sign = 1;
             int i = 0;
             int convertedNumber = 0;
+            int overFlow = 0;
             int len = StringLogic.Length(str);
-            char[] temp = toCharArray(str);
+            
             //Check whether number is positive or negative
             if (str[0] == '-')
             {
@@ -73,9 +74,20 @@ namespace WicresoftDev.CSharpLogic
             }
             for (; i < len; i++)
             {
-                if (temp[i] >= '0' && temp[i] <= '9')
+                if (str[i] == ' ') // remove space if string contain space in it [ this condition base on function requirement]
+                    continue;
+
+                if (str[i] >= '0' && str[i] <= '9') // check only [0-9] digit in string. For other digit function return 0
                 {
-                    convertedNumber = convertedNumber * 10 + (temp[i] - 48);
+                    overFlow = convertedNumber;
+                    convertedNumber = convertedNumber * 10 + (str[i] - '0');
+                    if(overFlow != ((convertedNumber - str[i]) + '0') / 10) 
+                    {
+                        if(sign == -1)
+                            return int.MinValue;
+                        else
+                            return int.MaxValue;
+                    }
                 }
                 else
                 {

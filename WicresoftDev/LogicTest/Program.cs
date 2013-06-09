@@ -9,12 +9,12 @@ using WicresoftDev.CSharpLogic.Stacks;
 
 namespace LogicTest
 {
+    
     class Program
     {
         static void Main(string[] args)
         {
-
-
+            
             //Console.WriteLine(StringLogic.Reverse("Naren"));
             //Console.WriteLine(StringLogic.Trim("      N c\nM p\nKeshav     "));
             //Console.WriteLine(StringLogic.LeftTrim("      N c\nM p\nKeshav     "));
@@ -69,16 +69,23 @@ namespace LogicTest
             //list.ShowForwrdNodeList();
             //list.ShowBackwordNodeList();
 
-            ////Circular linked list
+            //Circular linked list
 
-            //CircularLinkedList list = new CircularLinkedList();
-            //list.AddNode("A");
-            //list.AddNode("B");
-            //list.AddNode("C");
-            //list.ShowList();
-            //Console.WriteLine("\n[{0}] Node retrive from list!", list.Retrive(1).Data);
-            //Console.WriteLine("\n[{0}] Node retrive from list!", list.Retrive(2).Data);
-            //Console.WriteLine("\n[{0}] Node retrive from list!", list.Retrive(3).Data);
+            CircularLinkedList list = new CircularLinkedList();
+            list.AddNode("A");
+            list.AddNode("B");
+            list.AddNode("C");
+            list.AddNode("D");
+            list.AddNode("E");
+            list.ShowList();
+            Console.WriteLine("\n[{0}] Node retrive from list!", list.Retrive(1).Data);
+            Console.WriteLine("\n[{0}] Node retrive from list!", list.Retrive(2).Data);
+            Console.WriteLine("\n[{0}] Node retrive from list!", list.Retrive(3).Data);
+
+            list.DeleteNodeContinues(2);
+
+            //Console.WriteLine("\n[{0}] Node Deleted from list!", list.DeleteNode(2));
+            list.ShowList();
 
             //for (int i = 1; i <= 10; i++)
             //{
@@ -210,6 +217,32 @@ namespace LogicTest
             Console.WriteLine("add : 0001 + 0100 = {0}", DigitalLogic.AddBinaryNumber("0001", "0100"));
             Console.WriteLine("add : 0100 + 0100 = {0}", DigitalLogic.AddBinaryNumber("0100", "0100"));
             Console.WriteLine("add : 1111 + 1111 = {0}", DigitalLogic.AddBinaryNumber("1111", "1111"));
+
+            Console.WriteLine("Number : {0}", ArithmeticLogic.ATOI("1231"));
+            Console.WriteLine("Number : {0}", ArithmeticLogic.ATOI("-1231"));
+            Console.WriteLine("Number : {0}", ArithmeticLogic.ATOI("-12a31"));
+            Console.WriteLine("Number : {0}", ArithmeticLogic.ATOI("9999999999"));
+            Console.WriteLine("Number : {0}", ArithmeticLogic.ATOI("-9999999999"));
+
+
+            Console.WriteLine("Ip Address validation : {0}", StringLogic.isValidIp4(null));
+            Console.WriteLine("Ip Address validation : {0}", StringLogic.isValidIp4("..."));
+            Console.WriteLine("Ip Address validation : {0}", StringLogic.isValidIp4("000.0000.000.0000"));
+            Console.WriteLine("Ip Address validation : {0}", StringLogic.isValidIp4("aa.0000.000.0000"));
+            Console.WriteLine("Ip Address validation : {0}", StringLogic.isValidIp4("aa.00.00.000.0000"));
+            Console.WriteLine("Ip Address validation : {0}", StringLogic.isValidIp4("172.0aa.0.0"));
+            Console.WriteLine("Ip Address validation : {0}", StringLogic.isValidIp4("0...0"));
+            Console.WriteLine("Ip Address validation : {0}", StringLogic.isValidIp4("0000...0"));
+            Console.WriteLine("Ip Address validation : {0}", StringLogic.isValidIp4("172.0.0.00000"));
+            Console.WriteLine("Ip Address validation : {0}", StringLogic.isValidIp4("172.0.0.0"));
+
+
+            Console.WriteLine("Remove char from string: {0}", StringLogic.RemoveCharFromString("a", "aaabcaabcdef"));
+            Console.WriteLine("Remove char from string: {0}", StringLogic.RemoveCharFromString("abc", "aaabcaabcdef"));
+
+            Console.WriteLine("find second largest number: {0}", ArrayLogic.FindSecondLargestElement(new int[] { 15, 2, 0, 4, 15 }));
+
+
             Console.ReadLine();
         }
     }

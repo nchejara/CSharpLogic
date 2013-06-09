@@ -231,6 +231,119 @@ namespace WicresoftDev.CSharpLogic
             return uniqueStr;
         }
 
+
+        /// <summary>
+        /// Pick one by one char from one string and remove picked char from other string
+        /// e.g.  str1 = abc and str2 = aaabcaabcdef
+        /// result = bcbcdef
+        /// </summary>
+        /// <param name="str1"></param>
+        /// <param name="str2"></param>
+        /// <returns></returns>
+        public static string RemoveCharFromString(string str1, string str2)
+        {
+            if (str1 == null)
+                return str2;
+
+            if (str1 != null && str2 == null)
+                return null;
+
+            // Also check string is empty ...
+            
+            //str1 : pick one by one char and remove it from str2
+            int str1Len = StringLogic.Length(str1);
+            
+            for (int i = 0; i < str1Len; i++)
+            {
+                for (int j = 0; j < StringLogic.Length(str2); j++)
+                {
+                    if (str2[j] == str1[i])
+                    {
+                        str2 = RemovedCharAt(str2, str1[i]);
+                    }
+                }
+            }
+            return str2;
+        }
+
+        /// <summary>
+        /// Removed a char from the string
+        /// </summary>
+        /// <param name="str"></param>
+        /// <param name="ch"></param>
+        /// <returns></returns>
+        public static string RemovedCharAt(string str, char ch)
+        {
+            int len = StringLogic.Length(str);
+            string newStr = string.Empty;
+            for (int i = 0; i < len; i++)
+            {
+                if (str[i] == ch)
+                    continue;
+                newStr += str[i];
+            }
+            return newStr;
+        }
+
+        /// <summary>
+        /// Validate IP4 address which is in form of string
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static int isValidIp4(string str)
+        {
+            if (str == null)
+                return 0;
+
+            int len = StringLogic.Length(str);
+            if (len > 16) // string length should be lessthan or equal to 16
+                return 0;
+            
+            //This validation based on the function requirement
+            if (str[0] == '.') // first char shouldn't be '.'
+                return 0;
+
+            int segValue = 0; // use to count each segment value
+            int charCount = 0; // char count in the segment
+            int segCount = 1; // count total segment
+
+            for (int i = 0; i < len; i++)
+            {
+                if (str[i] == '.')
+                {
+                    // SegCount should be 4 not more then that
+                    if (segCount++ > 4)
+                        return 0;
+
+                    //charCount should be 3 not more than that
+                    if (charCount > 3 || charCount == 0) // zero condition is based on function requirement
+                        return 0;
+                    
+                    charCount = segValue = 0; // assign 0 for both charCount and segValue because we need to again count for other segment 
+                    continue;
+
+                }
+
+                //Return 0 if string consist below 0 and above 9 digit (it means return 0 if value is other than [0-9]
+                if (str[i] < '0' || str[i] > '9')
+                    return 0;
+
+                //check max value of segment
+                if((segValue = segValue * 10 + (str[i] - '0')) > 255)
+                    return 0;
+
+                charCount++;
+            }
+
+            if (segCount != 4)
+                return 0;
+
+            if (charCount > 3)
+                return 0;
+
+
+            return 1;
+        }
         
     }
 

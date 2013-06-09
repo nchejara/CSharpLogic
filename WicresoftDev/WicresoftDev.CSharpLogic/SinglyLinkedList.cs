@@ -48,6 +48,7 @@ namespace WicresoftDev.CSharpLogic
                 Current = newNode;
             }
         }
+        
         /// <summary>
         /// Add node in the beginning
         /// </summary>
@@ -71,6 +72,7 @@ namespace WicresoftDev.CSharpLogic
                 }
             }
         }
+       
         /// <summary>
         /// Add node at the end of the list
         /// </summary>
@@ -100,6 +102,7 @@ namespace WicresoftDev.CSharpLogic
 
             }
         }
+       
         /// <summary>
         /// Add node at specific position
         /// </summary>
@@ -150,6 +153,7 @@ namespace WicresoftDev.CSharpLogic
 
             return false;
         }
+        
         /// <summary>
         /// print all node which are linked to each othere
         /// </summary>

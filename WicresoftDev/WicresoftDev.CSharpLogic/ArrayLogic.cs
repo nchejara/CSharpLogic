@@ -134,5 +134,34 @@ namespace WicresoftDev.CSharpLogic
 
             return temp;
         }
+
+        /// <summary>
+        /// Find second largest element from an array ...
+        /// </summary>
+        /// <param name="array"></param>
+        /// <returns></returns>
+        public static int FindSecondLargestElement(int[] array)
+        {
+            int largestElement = 0;
+            int secondLargestElement = 0;
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (largestElement < array[i])
+                {
+                    largestElement = array[i];
+                    for (int j = 0; j < array.Length; j++)
+                    {
+                        if (array[j] == largestElement)
+                            continue;
+
+                        if (secondLargestElement < array[j])
+                            secondLargestElement = array[j];
+                    }
+                }
+            }
+
+            return secondLargestElement;
+        }
     }
 }

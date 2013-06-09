@@ -6,4 +6,3 @@ D:\Git\CSharpLogic\WicresoftDev\WicresoftDev.CSharpLogic\bin\Debug\WicresoftDev.
 D:\Git\CSharpLogic\WicresoftDev\WicresoftDev.CSharpLogic\bin\Debug\WicresoftDev.CSharpLogic.pdb
 D:\Git\CSharpLogic\WicresoftDev\WicresoftDev.CSharpLogic\obj\Debug\WicresoftDev.CSharpLogic.dll
 D:\Git\CSharpLogic\WicresoftDev\WicresoftDev.CSharpLogic\obj\Debug\WicresoftDev.CSharpLogic.pdb
-D:\Git\CSharpLogic\WicresoftDev\WicresoftDev.CSharpLogic\obj\Debug\WicresoftDev.CSharpLogic.csprojResolveAssemblyReference.cache

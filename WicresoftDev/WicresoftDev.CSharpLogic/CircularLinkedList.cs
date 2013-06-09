@@ -87,5 +87,76 @@ namespace WicresoftDev.CSharpLogic
 
             return null;
         }
+
+        public bool DeleteNode(int position)
+        {
+            
+
+            if (position == 1)
+            {
+                Head = null;
+                Size = 0;
+                Current = null;
+                return true;
+            }
+            
+            if(position >= 1 && position <= Size)
+            {
+                Node tempNode = Head;
+                Node lastNote = null;
+                int count = 0;
+
+                do
+                {
+                    if (count == position - 1)
+                    {
+                        Size--;
+                        lastNote.Next = tempNode.Next;
+                        return true;
+                    }
+                    count++;
+
+                    lastNote = tempNode;
+                    tempNode = tempNode.Next;
+                } while (tempNode != Head);
+                
+            }
+
+            return false;
+        }
+
+        public void DeleteNodeContinues(int position)
+        {
+
+            if (position == 1)
+            {
+                Head = null;
+                Size = 0;
+                Current = null;
+            }
+
+            if (position >= 1 && position <= Size)
+            {
+                Node tempNode = Head;
+                Node lastNote = null;
+                int count = 0;
+
+                do
+                {
+                    if (count == position - 1)
+                    {
+                        Size--;
+                        lastNote.Next = tempNode.Next;
+                        DeleteNodeContinues(position);
+                        //return true;
+                    }
+                    count++;
+
+                    lastNote = tempNode;
+                    tempNode = tempNode.Next;
+                } while (tempNode != Head);
+
+            }
+        }
     }
 }
