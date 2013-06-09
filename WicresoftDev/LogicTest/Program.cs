@@ -242,6 +242,7 @@ namespace LogicTest
 
             Console.WriteLine("find second largest number: {0}", ArrayLogic.FindSecondLargestElement(new int[] { 15, 2, 0, 4, 15 }));
 
+            int[] array1 = ArrayLogic.ContinueDeleteElementFromArray(new int[] { 15, 2, 0, 4, 15 }, 2);
 
             Console.ReadLine();
         }

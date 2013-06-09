@@ -163,5 +163,23 @@ namespace WicresoftDev.CSharpLogic
 
             return secondLargestElement;
         }
+
+        public static int[] ContinueDeleteElementFromArray(int[] array, int index)
+        {
+            int[] tempArray = new int[array.Length - 1];
+            
+            for (int i = 0; i < array.Length-1; i++)
+            {
+                if (i == index)
+                    continue;
+                tempArray[i] = array[i];
+            }
+
+            if(tempArray.Length != 1)
+                tempArray= ContinueDeleteElementFromArray(tempArray,index);
+
+            return tempArray;
+
+        }
     }
 }
