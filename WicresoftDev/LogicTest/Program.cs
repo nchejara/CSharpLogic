@@ -9,12 +9,12 @@ using WicresoftDev.CSharpLogic.Stacks;
 
 namespace LogicTest
 {
-    
+
     class Program
     {
         static void Main(string[] args)
         {
-            
+
             //Console.WriteLine(StringLogic.Reverse("Naren"));
             //Console.WriteLine(StringLogic.Trim("      N c\nM p\nKeshav     "));
             //Console.WriteLine(StringLogic.LeftTrim("      N c\nM p\nKeshav     "));
@@ -29,15 +29,15 @@ namespace LogicTest
 
             // Linked List
 
-            //LinkedList llm = new LinkedList();
+            LinkedList llm = new LinkedList();
 
-            //llm.AddNode("A");
-            //llm.AddNode("B"); 
-            //llm.AddNode("C");
-            //llm.AddNode("D");
-            //llm.AddNode("E");
-
-            //llm.ShowListOfNode();
+            llm.AddNode(5);
+            llm.AddNode(7);
+            llm.AddNode(3);
+            llm.AddNode(2);
+            llm.AddNode(1);
+            llm.Sort();
+            llm.ShowListOfNode();
             //Console.WriteLine("\nTotal Node are {0}", llm.size);
 
             //Console.WriteLine("\n{0} Node is retrived!", llm.RetriveNode(1).Data);
@@ -72,20 +72,22 @@ namespace LogicTest
             //Circular linked list
 
             CircularLinkedList list = new CircularLinkedList();
-            list.AddNode("A");
-            list.AddNode("B");
-            list.AddNode("C");
-            list.AddNode("D");
-            list.AddNode("E");
+            list.AddNode("1");
+            list.AddNode("2");
+            list.AddNode("3");
+            list.AddNode("4");
+            list.AddNode("5");
+            list.AddNode("6");
+            list.RemoveElementFromRoundTable(3);
             list.ShowList();
-            Console.WriteLine("\n[{0}] Node retrive from list!", list.Retrive(1).Data);
-            Console.WriteLine("\n[{0}] Node retrive from list!", list.Retrive(2).Data);
-            Console.WriteLine("\n[{0}] Node retrive from list!", list.Retrive(3).Data);
+            //Console.WriteLine("\n[{0}] Node retrive from list!", list.Retrive(1).Data);
+            //Console.WriteLine("\n[{0}] Node retrive from list!", list.Retrive(2).Data);
+            //Console.WriteLine("\n[{0}] Node retrive from list!", list.Retrive(3).Data);
 
-            list.DeleteNodeContinues(2);
+            //list.DeleteNodeContinues(2);
 
-            //Console.WriteLine("\n[{0}] Node Deleted from list!", list.DeleteNode(2));
-            list.ShowList();
+            ////Console.WriteLine("\n[{0}] Node Deleted from list!", list.DeleteNode(2));
+            //list.ShowList();
 
             //for (int i = 1; i <= 10; i++)
             //{
@@ -132,7 +134,7 @@ namespace LogicTest
             //}
 
             //Console.WriteLine("\nMerge Two Array Sort :");
-            //array = ArrayLogic.MergeTwoArray(new int[] { 1, 2, 3, 5 }, new int[] { 6, 7, 8, 9, 10, 11, 12 });
+            //int[] array = ArrayLogic.MergeTwoArray(new int[] { 1, 2, 3, 6 }, new int[] { 3, 4, 5, 8, 9, 10, 11, 12 });
             //for (int i = 0; i < array.Length; i++)
             //{
             //    Console.Write("[ " + array[i] + " ] ");
@@ -172,10 +174,10 @@ namespace LogicTest
 
             //Console.WriteLine("\n Show pre-order node node in tree");
             //BinarySearchTree.Instance.ShowPreOrderTree();
-            
+
             //Console.WriteLine("\n Show In-order node node in tree");
             //BinarySearchTree.Instance.ShowInOrderTree();
-            
+
             //Console.WriteLine("\n Show Post-order node node in tree");
             //BinarySearchTree.Instance.ShowPostOrderTree();
 
@@ -184,8 +186,8 @@ namespace LogicTest
             ////Recursive
             //Console.WriteLine("\nMaximum node is : {0}", BinarySearchTree.Instance.FindMaxNodeRecursive().Data);
             //Console.WriteLine("\nMinmum node is : {0}", BinarySearchTree.Instance.FindMinNodeRecursive().Data);
-           
-            
+
+
             //try
             //{
             //    //Check Stack Operation
@@ -211,7 +213,7 @@ namespace LogicTest
             //}
 
 
-            Console.WriteLine("add : 0001 + 0001 = {0}",DigitalLogic.AddBinaryNumber("0001", "0001"));
+            Console.WriteLine("add : 0001 + 0001 = {0}", DigitalLogic.AddBinaryNumber("0001", "0001"));
             Console.WriteLine("add : 0001 + 0010 = {0}", DigitalLogic.AddBinaryNumber("0001", "0010"));
             Console.WriteLine("add : 0001 + 0011 = {0}", DigitalLogic.AddBinaryNumber("0001", "0011"));
             Console.WriteLine("add : 0001 + 0100 = {0}", DigitalLogic.AddBinaryNumber("0001", "0100"));
@@ -242,7 +244,9 @@ namespace LogicTest
 
             Console.WriteLine("find second largest number: {0}", ArrayLogic.FindSecondLargestElement(new int[] { 15, 2, 0, 4, 15 }));
 
-            int[] array1 = ArrayLogic.ContinueDeleteElementFromArray(new int[] { 15, 2, 0, 4, 15 }, 2);
+            int[] array1 = ArrayLogic.ContinueDeleteElementFromArray(new int[] { 15, 2, 0, 4, 15 }, 3);
+
+            List<int> listArray = ArrayLogic.MergeTwoListArray(new List<int>() { 3, 4, 4, 5, 6 }, new List<int>() { 1, 2, 7, 8 });
 
             Console.ReadLine();
         }

@@ -14,3 +14,11 @@ D:\Git\CSharpLogic\WicresoftDev\LogicTest\bin\Debug\WicresoftDev.CSharpLogic.dll
 D:\Git\CSharpLogic\WicresoftDev\LogicTest\bin\Debug\WicresoftDev.CSharpLogic.pdb
 D:\Git\CSharpLogic\WicresoftDev\LogicTest\obj\Debug\LogicTest.exe
 D:\Git\CSharpLogic\WicresoftDev\LogicTest\obj\Debug\LogicTest.pdb
+D:\Learning Asp.net\Git\CSharpLogic\WicresoftDev\LogicTest\bin\Debug\LogicTest.exe.config
+D:\Learning Asp.net\Git\CSharpLogic\WicresoftDev\LogicTest\obj\Debug\LogicTest.exe
+D:\Learning Asp.net\Git\CSharpLogic\WicresoftDev\LogicTest\obj\Debug\LogicTest.pdb
+D:\Learning Asp.net\Git\CSharpLogic\WicresoftDev\LogicTest\bin\Debug\LogicTest.exe
+D:\Learning Asp.net\Git\CSharpLogic\WicresoftDev\LogicTest\bin\Debug\LogicTest.pdb
+D:\Learning Asp.net\Git\CSharpLogic\WicresoftDev\LogicTest\bin\Debug\WicresoftDev.CSharpLogic.dll
+D:\Learning Asp.net\Git\CSharpLogic\WicresoftDev\LogicTest\bin\Debug\WicresoftDev.CSharpLogic.pdb
+D:\Learning Asp.net\Git\CSharpLogic\WicresoftDev\LogicTest\obj\Debug\LogicTest.csprojResolveAssemblyReference.cache

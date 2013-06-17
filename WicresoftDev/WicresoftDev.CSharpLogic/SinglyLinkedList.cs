@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -263,6 +264,27 @@ namespace WicresoftDev.CSharpLogic
             }
 
             return false;
+        }
+
+        public void Sort()
+        {
+            Node tempNode = Head;
+            Node tempNode1 =null;
+            while (tempNode != null)
+            {
+                tempNode1 = tempNode.Next;
+                while(tempNode1 != null)
+                {
+                    if((int)tempNode.Data > (int)tempNode1.Data)
+                    {
+                        int temp = (int) tempNode.Data;
+                        tempNode.Data = tempNode1.Data;
+                        tempNode1.Data = temp;
+                    }
+                    tempNode1 = tempNode1.Next;
+                }
+                tempNode = tempNode.Next;
+            }
         }
     }
 

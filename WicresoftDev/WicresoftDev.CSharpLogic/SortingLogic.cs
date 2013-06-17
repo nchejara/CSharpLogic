@@ -81,7 +81,7 @@ namespace WicresoftDev.CSharpLogic
                     }
                 }
             }
-
+            
             return array;
         }
 

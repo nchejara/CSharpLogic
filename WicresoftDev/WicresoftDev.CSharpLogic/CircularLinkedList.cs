@@ -158,5 +158,31 @@ namespace WicresoftDev.CSharpLogic
 
             }
         }
+
+        /// <summary>
+        /// This function continue remove element from the round table
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
+        public Node RemoveElementFromRoundTable(int index)
+        {
+            Node tempNode = Head;
+            Node lastNode = null;
+            int count = 1;
+            // Last node always point to it
+            while (tempNode.Next != tempNode && Size != index - 1)
+            {
+                if (count % index == 0 )
+                {
+                    Size--;
+                    lastNode.Next = tempNode.Next;
+                }
+                count++;
+                lastNode = tempNode;
+                tempNode = tempNode.Next;
+            }
+
+            return tempNode;
+        }
     }
 }

@@ -26,7 +26,7 @@ namespace WicresoftDev.CSharpLogic
 
             while ((array1Start < array1.Length) && (array2Start < array2.Length))
             {
-                if (array1Start < array1.Length)
+                if (array1[array1Start] < array2[array2Start] )
                 {
                     mergeArray[mergeArrayStart] = array1[array1Start];
                     mergeArrayStart++;
@@ -56,36 +56,51 @@ namespace WicresoftDev.CSharpLogic
             return mergeArray;
         }
 
-        
-        public static int[] RemoveDuplicate(int[] array)
+        /// <summary>
+        /// Merge two sorted array list ... .. .
+        /// </summary>
+        /// <param name="array1"></param>
+        /// <param name="array2"></param>
+        /// <returns></returns>
+        public static List<int> MergeTwoListArray(List<int> array1, List<int> array2)
         {
-            int count = 0;
             
-            for (int i = 0; i < array.Length; i++)
-            {
-                for (int j = i + 1; j < array.Length; j++)
-                {
-                    if (array[j] == array[i])
-                    {
-                        array[j] = 0;
-                        count++;
-                    }
+            List<int> mergedArray = new List<int>();
 
+            int array1Start = 0;
+            int array2Start = 0;
+            int mergedStart = 0;
+
+            while ((array1Start < array1.Count) && (array2Start < array2.Count))
+            {
+                if (array1[array1Start] < array2[array2Start])
+                {
+                    mergedArray.Add(array1[array1Start]);
+                    mergedStart++;
+                    array1Start++;
+                }
+                else
+                {
+                    mergedArray.Add(array2[array2Start]);
+                    mergedStart++;
+                    array2Start++;
                 }
             }
-            int k = 0;
-            int[] temp = new int[count];
-            for (int i = 0; i < array.Length; i++)
+
+            while (array1Start < array1.Count)
             {
-                if (array[i] != 0)
-                {
-                    temp[k] = array[i];
-                    k++;
-                }
+                mergedArray.Add(array1[array1Start]);
+                mergedStart++;
+                array1Start++;
             }
 
-            return temp;
-
+            while (array2Start < array2.Count)
+            {
+                mergedArray.Add(array2[array2Start]);
+                mergedStart++;
+                array2Start++;
+            }
+            return mergedArray;
         }
 
         /// <summary>
@@ -163,7 +178,7 @@ namespace WicresoftDev.CSharpLogic
 
             return secondLargestElement;
         }
-
+        
         public static int[] ContinueDeleteElementFromArray(int[] array, int index)
         {
             int[] tempArray = new int[array.Length - 1];
@@ -175,7 +190,7 @@ namespace WicresoftDev.CSharpLogic
                 tempArray[i] = array[i];
             }
 
-            if(tempArray.Length != 1)
+            if(!(tempArray.Length < index))
                 tempArray= ContinueDeleteElementFromArray(tempArray,index);
 
             return tempArray;
