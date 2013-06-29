@@ -27,6 +27,11 @@ namespace LogicTest
             ////[To do]: Below line string not work.need to sort in asending order
             //Console.WriteLine(StringLogic.RemoveDuplicateChar("abcabc"));
 
+            Console.WriteLine(StringLogic.GetQuotedWordFromString("I am \"Naren\" Chejara and work in \"Shanghai\"."));
+            Console.WriteLine(StringLogic.GetQuotedWordFromString("I am \"Naren\" Chejara \" and \"work in \"Shanghai"));
+            Console.WriteLine(StringLogic.CountQuotedWordFromString("I am \"Naren\" Chejara and work in \"Shanghai\"."));
+            Console.WriteLine(StringLogic.CountQuotedWordFromString("I am \"Naren\" Chejara \" and \"work in \"Shanghai"));
+
             // Linked List
 
             LinkedList llm = new LinkedList();

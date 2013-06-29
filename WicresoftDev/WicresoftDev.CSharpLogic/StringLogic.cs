@@ -51,7 +51,7 @@ namespace WicresoftDev.CSharpLogic
 
             return reverseStr;
         }
-        
+
         //Finding length without using in-build string function
         public static int Length(string str)
         {
@@ -80,7 +80,7 @@ namespace WicresoftDev.CSharpLogic
             str = Trim(str);
             int len = Length(str);
             int countLine = 0;
-            
+
             for (int i = 0; i < len - 1; i++)
             {
                 if (str[i] == '\n')
@@ -111,7 +111,7 @@ namespace WicresoftDev.CSharpLogic
             return totalWord + 1;
         }
 
-        
+
         //Remove left and right space from given tring
         public static string Trim(string str)
         {
@@ -180,7 +180,7 @@ namespace WicresoftDev.CSharpLogic
                 if (str[i] == ' ')
                 {
                     str1 += str[i];
-                    for(int j= i + 1; j < len; j++)
+                    for (int j = i + 1; j < len; j++)
                     {
                         if (str[j] != ' ')
                         {
@@ -207,7 +207,7 @@ namespace WicresoftDev.CSharpLogic
         //Remove duplicate char from given string(E.G. "aabbcc" or aaabbbbbcccc
         public static string RemoveDuplicateChar(string str)
         {
-           
+
             str = Trim(str);
             int len = Length(str);
             string uniqueStr = string.Empty;
@@ -220,12 +220,12 @@ namespace WicresoftDev.CSharpLogic
                 {
                     if (str[i] == str[j])
                     {
-                        count++;    
+                        count++;
                     }
                 }
 
-               i += count;
-               count = 0;
+                i += count;
+                count = 0;
             }
 
             return uniqueStr;
@@ -249,10 +249,10 @@ namespace WicresoftDev.CSharpLogic
                 return null;
 
             // Also check string is empty ...
-            
+
             //str1 : pick one by one char and remove it from str2
             int str1Len = StringLogic.Length(str1);
-            
+
             for (int i = 0; i < str1Len; i++)
             {
                 for (int j = 0; j < StringLogic.Length(str2); j++)
@@ -298,7 +298,7 @@ namespace WicresoftDev.CSharpLogic
             int len = StringLogic.Length(str);
             if (len > 16) // string length should be lessthan or equal to 16
                 return 0;
-            
+
             //This validation based on the function requirement
             if (str[0] == '.') // first char shouldn't be '.'
                 return 0;
@@ -318,7 +318,7 @@ namespace WicresoftDev.CSharpLogic
                     //charCount should be 3 not more than that
                     if (charCount > 3 || charCount == 0) // zero condition is based on function requirement
                         return 0;
-                    
+
                     charCount = segValue = 0; // assign 0 for both charCount and segValue because we need to again count for other segment 
                     continue;
 
@@ -329,7 +329,7 @@ namespace WicresoftDev.CSharpLogic
                     return 0;
 
                 //check max value of segment
-                if((segValue = segValue * 10 + (str[i] - '0')) > 255)
+                if ((segValue = segValue * 10 + (str[i] - '0')) > 255)
                     return 0;
 
                 charCount++;
@@ -344,7 +344,97 @@ namespace WicresoftDev.CSharpLogic
 
             return 1;
         }
-        
+
+        /// <summary>
+        /// Get quoted word from given string
+        /// input str = I am "Naren" Chejara and work in "Shanghai".
+        /// Output = "Naren""Shanghai"
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static string GetQuotedWordFromString(string str)
+        {
+            if (str == null || str == "")
+                return "";
+
+            string getQuotedWord = string.Empty;
+
+            int start = 0;
+            int i = 0;
+            int len = Length(str);
+
+            while (i != len)
+            {
+                if (str[i] == '"')
+                {
+                    start = 0;
+                    i++;
+                    // initiliazed start with 1 if string contain end quote after quote started.
+                    for (int j = i; j < len; j++)
+                    {
+                        if (str[j] == '"')
+                        {
+                            start = 1;
+                        }
+
+                    }
+                    // get the work until we are not find end quote based on start flag
+                    while (str[i] != '"' && start == 1 && i < len)
+                    {
+                        getQuotedWord += str[i];
+                        if(i < len) // avoid OutOfIndex Exception
+                            i++;
+                    }
+                    
+                }
+                if (i < len)// avoid OutOfIndex Exception
+                    i++;
+            }
+
+            return getQuotedWord;
+        }
+
+        /// <summary>
+        /// Get quoted word from given string
+        /// input str = I am "Naren" Chejara and work in "Shanghai".
+        /// Output = 2
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static int CountQuotedWordFromString(string str)
+        {
+            if (str == null || str == "")
+                return 0;
+
+            int countQuotedWord = 0;
+            int i = 0;
+            int len = Length(str);
+
+            while (i != len)
+            {
+                if (str[i] == '"')
+                {
+                    i++;
+                    while (i != len)
+                    {
+                        if (str[i] == '"')
+                        {
+                            countQuotedWord++;
+                            break;
+                        }
+                        if(i < len)
+                            i++;
+                    }
+
+                }
+                if (i < len)
+                    i++;
+            }
+
+            return countQuotedWord;
+        }
+
+
     }
 
 
